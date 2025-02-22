@@ -15,9 +15,9 @@ const { TextArea } = Input;
 
 function TodoList() {
   const initialData = [
-    { id: 1, title: "Study", description: "revise topics", status: false },
-    { id: 2, title: "Note2", description: "Complete the task", status: true },
-    { id: 3, title: "Note3", description: "Do this task finish", status: true },
+    { id: 1, title: "Study", description: "revise topics", status: true },
+    { id: 2, title: "Note2", description: "Complete it", status: true },
+    { id: 3, title: "Note3", description: "finish it", status: false },
   ];
   const [data, setData] = useState(initialData);
   const [searchTerm, setSearchTerm] = useState("");
@@ -96,7 +96,7 @@ function TodoList() {
       style={{
         maxWidth: "500px",
         margin: "20px auto",
-        padding: "30px",
+        padding: "10px",
         backgroundColor: "#f7f7f7",
         borderRadius: "15px",
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
