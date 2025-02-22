@@ -190,7 +190,7 @@ function TodoList() {
                     fontSize: "18px",
                     fontWeight: "bold",
                     color: "#333",
-                    textDecoration: e.status ? "line-through":"none" , // Applying line-through when task is not done
+                    textDecoration: e.status ? "line-through" : "none", // Applying line-through when task is not done
                   }}
                 >
                   {e.title}
@@ -250,7 +250,11 @@ function TodoList() {
           <Button key="back" onClick={closeModal}>
             Close
           </Button>,
-          <Button key="submit" type="primary" onClick={saveNote}>
+          <Button
+            key="submit"
+            style={{ background: "green", color: "white" }}
+            onClick={saveNote}
+          >
             Save Note
           </Button>,
         ]}
@@ -259,13 +263,17 @@ function TodoList() {
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          style={{ marginBottom: "10px", borderRadius: "8px", padding: "10px" }}
+          style={{
+            marginBottom: "10px",
+            borderRadius: "8px",
+            padding: "10px ",
+          }}
         />
-        <TextArea
+        <Input
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          style={{ borderRadius: "8px", padding: "10px" }}
+          style={{ marginBottom: "10px", borderRadius: "8px", padding: "10px" }}
         />
       </Modal>
 
@@ -277,7 +285,11 @@ function TodoList() {
           <Button key="back" onClick={closeEditModal}>
             Close
           </Button>,
-          <Button key="submit" type="primary" onClick={updateUser}>
+          <Button
+            key="submit"
+            style={{ background: "green", color: "white" }}
+            onClick={updateUser}
+          >
             Update Note
           </Button>,
         ]}
@@ -288,11 +300,11 @@ function TodoList() {
           onChange={(e) => setTitle(e.target.value)}
           style={{ marginBottom: "10px", borderRadius: "8px", padding: "10px" }}
         />
-        <TextArea
+        <Input
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          style={{ borderRadius: "8px", padding: "10px" }}
+          style={{ marginBottom: "10px", borderRadius: "8px", padding: "10px" }}
         />
       </Modal>
     </div>
